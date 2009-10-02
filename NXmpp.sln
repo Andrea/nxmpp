@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NXmpp", "NXmpp\NXmpp.csproj", "{51DE78EE-5AE1-4FED-A10C-E345685CFA1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4D172DB1-5B75-45F4-8C3E-0520AC029DB8}"
+	ProjectSection(SolutionItems) = preProject
+		NXmpp.snk = NXmpp.snk
+		SharedAssemblyInfo.cs = SharedAssemblyInfo.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NXmpp.Tests", "NXmpp.Tests\NXmpp.Tests.csproj", "{276F23A3-A952-48DD-9202-3546321F6F76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NXmpp.Dns", "NXmpp.Dns\NXmpp.Dns.csproj", "{2A8C3A2F-0F40-4F07-A569-804C6FF16260}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NXmpp.Dns.Windows", "NXmpp.Dns.Windows\NXmpp.Dns.Windows.csproj", "{67482E63-2025-42A8-9E0F-D7488E765918}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NXmpp.Dns.Windows.Tests", "NXmpp.Dns.Windows.Tests\NXmpp.Dns.Windows.Tests.csproj", "{EB737B85-1314-469D-8BD5-A56690A52FC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51DE78EE-5AE1-4FED-A10C-E345685CFA1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51DE78EE-5AE1-4FED-A10C-E345685CFA1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51DE78EE-5AE1-4FED-A10C-E345685CFA1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51DE78EE-5AE1-4FED-A10C-E345685CFA1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{276F23A3-A952-48DD-9202-3546321F6F76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{276F23A3-A952-48DD-9202-3546321F6F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{276F23A3-A952-48DD-9202-3546321F6F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{276F23A3-A952-48DD-9202-3546321F6F76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A8C3A2F-0F40-4F07-A569-804C6FF16260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A8C3A2F-0F40-4F07-A569-804C6FF16260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A8C3A2F-0F40-4F07-A569-804C6FF16260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A8C3A2F-0F40-4F07-A569-804C6FF16260}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67482E63-2025-42A8-9E0F-D7488E765918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67482E63-2025-42A8-9E0F-D7488E765918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67482E63-2025-42A8-9E0F-D7488E765918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67482E63-2025-42A8-9E0F-D7488E765918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB737B85-1314-469D-8BD5-A56690A52FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB737B85-1314-469D-8BD5-A56690A52FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB737B85-1314-469D-8BD5-A56690A52FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB737B85-1314-469D-8BD5-A56690A52FC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
