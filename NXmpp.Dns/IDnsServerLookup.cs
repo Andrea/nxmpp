@@ -18,8 +18,10 @@
 
 using System.Net;
 
-namespace NXmpp.Dns {
-	public interface IDnsServerLookup {
+namespace NXmpp.Dns
+{
+	public interface IDnsServerLookup
+	{
 		/// <summary>
 		/// Gets the dns servers registered to all network adaptors in the system.
 		/// </summary>

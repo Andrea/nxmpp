@@ -16,11 +16,14 @@
 
 #endregion
 
-namespace NXmpp.Dns.Windows {
-	public class WmiDnsServerLookupFactory : IDnsServerLookupFactory {
+namespace NXmpp.Dns.Windows
+{
+	public class WmiDnsServerLookupFactory : IDnsServerLookupFactory
+	{
 		#region IDnsServerLookupFactory Members
 
-		public IDnsServerLookup Create() {
+		public IDnsServerLookup Create()
+		{
 			return new WmiDnsServerLookup();
 		}
 

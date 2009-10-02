@@ -16,20 +16,22 @@
 
 #endregion
 
+using System;
 using System.Net;
-using Xunit;
 
-namespace NXmpp.Dns.Windows.Tests
+namespace NXmpp.Net
 {
-	public class WmiDnsServerLookupTests
+	internal class XmppHost
 	{
-		[Fact]
-		public void CanRetrieveDnsServers()
+		internal XmppHost(string hostName, IPAddress ipAddress, UInt16 port)
 		{
-			//this test assumes the system has a working network connection with dns servers setup either manually or via DHCP
-			var dnsServerLookup = new WmiDnsServerLookup();
-			IPAddress[] dnsServers = dnsServerLookup.GetDnsServers();
-			Assert.NotNull(dnsServers);
+			HostName = hostName;
+			IPAddress = ipAddress;
+			Port = port;
 		}
+
+		internal string HostName { get; private set; }
+		internal IPAddress IPAddress { get; private set; }
+		internal ushort Port { get; private set; }
 	}
 }

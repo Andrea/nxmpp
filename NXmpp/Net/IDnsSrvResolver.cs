@@ -17,19 +17,12 @@
 #endregion
 
 using System.Net;
-using Xunit;
+using DnDns.Query;
 
-namespace NXmpp.Dns.Windows.Tests
+namespace NXmpp.Net
 {
-	public class WmiDnsServerLookupTests
+	internal interface IDnsSrvResolver
 	{
-		[Fact]
-		public void CanRetrieveDnsServers()
-		{
-			//this test assumes the system has a working network connection with dns servers setup either manually or via DHCP
-			var dnsServerLookup = new WmiDnsServerLookup();
-			IPAddress[] dnsServers = dnsServerLookup.GetDnsServers();
-			Assert.NotNull(dnsServers);
-		}
+		DnsQueryResponse Resolve(IPAddress dnsServer, string record);
 	}
 }

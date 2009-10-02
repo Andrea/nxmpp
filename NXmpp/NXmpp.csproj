@@ -5,13 +5,15 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{276F23A3-A952-48DD-9202-3546321F6F76}</ProjectGuid>
+    <ProjectGuid>{51DE78EE-5AE1-4FED-A10C-E345685CFA1E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NXmpp.Tests</RootNamespace>
-    <AssemblyName>NXmpp.Tests</AssemblyName>
+    <RootNamespace>NXmpp</RootNamespace>
+    <AssemblyName>NXmpp</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\NXmpp.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,6 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Common.Logging\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="DnDns, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83423ade495c0682, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\DnDns\DnDns.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -45,13 +55,21 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Net\XmppHostsLookupTests.cs" />
+    <Compile Include="Net\IDnsSrvResolver.cs" />
+    <Compile Include="Net\IXmppHostsLookup.cs" />
+    <Compile Include="Net\XmppHost.cs" />
+    <Compile Include="Net\XmppHostsLookup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NXmpp\NXmpp.csproj">
-      <Project>{51DE78EE-5AE1-4FED-A10C-E345685CFA1E}</Project>
-      <Name>NXmpp</Name>
+    <None Include="..\NXmpp.snk">
+      <Link>NXmpp.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NXmpp.Dns\NXmpp.Dns.csproj">
+      <Project>{2A8C3A2F-0F40-4F07-A569-804C6FF16260}</Project>
+      <Name>NXmpp.Dns</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
