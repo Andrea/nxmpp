@@ -12,6 +12,8 @@
     <AssemblyName>NXmpp.Tests</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\NXmpp.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,6 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Common.Logging\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="DnDns, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83423ade495c0682, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\DnDns\DnDns.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq, Version=3.1.416.3, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Moq\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -40,19 +54,40 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="xunit, Version=1.1.0.1323, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\xUnit\xunit.dll</HintPath>
+    </Reference>
+    <Reference Include="xUnit.GWT, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\xUnit\xUnit.GWT.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Net\XmppHostsLookupTests.cs" />
+    <Compile Include="Net\XmppDnsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NXmpp.Dns.Windows\NXmpp.Dns.Windows.csproj">
+      <Project>{67482E63-2025-42A8-9E0F-D7488E765918}</Project>
+      <Name>NXmpp.Dns.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NXmpp.Dns\NXmpp.Dns.csproj">
+      <Project>{2A8C3A2F-0F40-4F07-A569-804C6FF16260}</Project>
+      <Name>NXmpp.Dns</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NXmpp\NXmpp.csproj">
       <Project>{51DE78EE-5AE1-4FED-A10C-E345685CFA1E}</Project>
       <Name>NXmpp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\NXmpp.snk">
+      <Link>NXmpp.snk</Link>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

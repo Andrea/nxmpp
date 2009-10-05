@@ -55,10 +55,13 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Net\IDnsSrvResolver.cs" />
-    <Compile Include="Net\IXmppHostsLookup.cs" />
+    <Compile Include="Net\DnDnsQueryRequestAdapter.cs" />
+    <Compile Include="Net\DnDnsQueryRequestFactory.cs" />
+    <Compile Include="Net\IDnsQueryRequest.cs" />
+    <Compile Include="Net\IDnsQueryRequestFactory.cs" />
+    <Compile Include="Net\XmppSrvRecord.cs" />
     <Compile Include="Net\XmppHost.cs" />
-    <Compile Include="Net\XmppHostsLookup.cs" />
+    <Compile Include="Net\XmppDns.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
