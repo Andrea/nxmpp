@@ -1,0 +1,7 @@
+﻿<iq from="user@domain/resource" id="roster_1" type="set">
+  <query xmlns="jabber:iq:roster">
+    <item jid="user2@domain" name="buddy">
+      <group>Friends</group>
+    </item>
+  </query>
+</iq>

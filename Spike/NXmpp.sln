@@ -1,0 +1,134 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{4450E095-1EB4-4984-9712-5E504F572C95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AB90E9FE-038B-4B6E-B810-26B7FB306F46}"
+	ProjectSection(SolutionItems) = preProject
+		ExampleXmppConversation.xml.txt = ExampleXmppConversation.xml.txt
+		SharedAssemblyInfo.cs = SharedAssemblyInfo.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NXmpp", "NXmpp\NXmpp.csproj", "{E537AE58-0E52-456B-8BE9-D5CF169C98B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NXmpp.Tests", "NXmpp.Tests\NXmpp.Tests.csproj", "{83B9CA6A-2BDD-4928-88BA-5CC511A6CC3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Moq", "Moq", "{D6D77095-31FB-4F48-8ADF-C1F097EA5357}"
+	ProjectSection(SolutionItems) = preProject
+		libs\moq\Moq.chm = libs\moq\Moq.chm
+		libs\moq\Moq.dll = libs\moq\Moq.dll
+		libs\moq\Moq.pdb = libs\moq\Moq.pdb
+		libs\moq\Moq.xml = libs\moq\Moq.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ninject", "Ninject", "{C2BA8DF3-97FF-4361-A254-FDD17C24654C}"
+	ProjectSection(SolutionItems) = preProject
+		libs\ninject\Ninject.Conditions.dll = libs\ninject\Ninject.Conditions.dll
+		libs\ninject\Ninject.Conditions.xml = libs\ninject\Ninject.Conditions.xml
+		libs\ninject\Ninject.Core.dll = libs\ninject\Ninject.Core.dll
+		libs\ninject\Ninject.Core.xml = libs\ninject\Ninject.Core.xml
+		libs\ninject\Ninject.Extensions.AutoWiring.dll = libs\ninject\Ninject.Extensions.AutoWiring.dll
+		libs\ninject\Ninject.Extensions.AutoWiring.xml = libs\ninject\Ninject.Extensions.AutoWiring.xml
+		libs\ninject\Ninject.Extensions.Cache.dll = libs\ninject\Ninject.Extensions.Cache.dll
+		libs\ninject\Ninject.Extensions.Cache.xml = libs\ninject\Ninject.Extensions.Cache.xml
+		libs\ninject\Ninject.Extensions.MessageBroker.dll = libs\ninject\Ninject.Extensions.MessageBroker.dll
+		libs\ninject\Ninject.Extensions.MessageBroker.xml = libs\ninject\Ninject.Extensions.MessageBroker.xml
+		libs\ninject\Ninject.Framework.Web.dll = libs\ninject\Ninject.Framework.Web.dll
+		libs\ninject\Ninject.Framework.Web.xml = libs\ninject\Ninject.Framework.Web.xml
+		libs\ninject\Ninject.Framework.WinForms.dll = libs\ninject\Ninject.Framework.WinForms.dll
+		libs\ninject\Ninject.Framework.WinForms.xml = libs\ninject\Ninject.Framework.WinForms.xml
+		libs\ninject\Ninject.Integration.AjaxPro.dll = libs\ninject\Ninject.Integration.AjaxPro.dll
+		libs\ninject\Ninject.Integration.AjaxPro.xml = libs\ninject\Ninject.Integration.AjaxPro.xml
+		libs\ninject\Ninject.Integration.DynamicProxy2.dll = libs\ninject\Ninject.Integration.DynamicProxy2.dll
+		libs\ninject\Ninject.Integration.DynamicProxy2.xml = libs\ninject\Ninject.Integration.DynamicProxy2.xml
+		libs\ninject\Ninject.Integration.LinFu.dll = libs\ninject\Ninject.Integration.LinFu.dll
+		libs\ninject\Ninject.Integration.LinFu.xml = libs\ninject\Ninject.Integration.LinFu.xml
+		libs\ninject\Ninject.Integration.Log4net.dll = libs\ninject\Ninject.Integration.Log4net.dll
+		libs\ninject\Ninject.Integration.Log4net.xml = libs\ninject\Ninject.Integration.Log4net.xml
+		libs\ninject\Ninject.Integration.MonoRail.dll = libs\ninject\Ninject.Integration.MonoRail.dll
+		libs\ninject\Ninject.Integration.MonoRail.xml = libs\ninject\Ninject.Integration.MonoRail.xml
+		libs\ninject\Ninject.Integration.NLog.dll = libs\ninject\Ninject.Integration.NLog.dll
+		libs\ninject\Ninject.Integration.NLog.xml = libs\ninject\Ninject.Integration.NLog.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common.Logging", "Common.Logging", "{9899DE81-23F0-4BE3-A242-95D869FC47C5}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\Common.Logging\Common.Logging.dll = Libs\Common.Logging\Common.Logging.dll
+		Libs\Common.Logging\Common.Logging.EntLib.dll = Libs\Common.Logging\Common.Logging.EntLib.dll
+		Libs\Common.Logging\Common.Logging.EntLib.pdb = Libs\Common.Logging\Common.Logging.EntLib.pdb
+		Libs\Common.Logging\Common.Logging.EntLib.xml = Libs\Common.Logging\Common.Logging.EntLib.xml
+		Libs\Common.Logging\Common.Logging.EntLib41.dll = Libs\Common.Logging\Common.Logging.EntLib41.dll
+		Libs\Common.Logging\Common.Logging.EntLib41.pdb = Libs\Common.Logging\Common.Logging.EntLib41.pdb
+		Libs\Common.Logging\Common.Logging.EntLib41.xml = Libs\Common.Logging\Common.Logging.EntLib41.xml
+		Libs\Common.Logging\Common.Logging.Log4Net.dll = Libs\Common.Logging\Common.Logging.Log4Net.dll
+		Libs\Common.Logging\Common.Logging.Log4Net.pdb = Libs\Common.Logging\Common.Logging.Log4Net.pdb
+		Libs\Common.Logging\Common.Logging.Log4Net.xml = Libs\Common.Logging\Common.Logging.Log4Net.xml
+		Libs\Common.Logging\Common.Logging.Log4Net129.dll = Libs\Common.Logging\Common.Logging.Log4Net129.dll
+		Libs\Common.Logging\Common.Logging.Log4Net129.pdb = Libs\Common.Logging\Common.Logging.Log4Net129.pdb
+		Libs\Common.Logging\Common.Logging.Log4Net129.xml = Libs\Common.Logging\Common.Logging.Log4Net129.xml
+		Libs\Common.Logging\Common.Logging.NLog.dll = Libs\Common.Logging\Common.Logging.NLog.dll
+		Libs\Common.Logging\Common.Logging.NLog.pdb = Libs\Common.Logging\Common.Logging.NLog.pdb
+		Libs\Common.Logging\Common.Logging.NLog.xml = Libs\Common.Logging\Common.Logging.NLog.xml
+		Libs\Common.Logging\Common.Logging.pdb = Libs\Common.Logging\Common.Logging.pdb
+		Libs\Common.Logging\Common.Logging.xml = Libs\Common.Logging\Common.Logging.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NXmpp.ChatClient", "NXmpp.ChatClient\NXmpp.ChatClient.csproj", "{DAD6F8A3-3CD5-40B0-8B8D-5F9B60009FEA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DnDns", "DnDns", "{3FAC7C96-9260-43DE-9685-56A495230858}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\DnDns\DnDns.dll = Libs\DnDns\DnDns.dll
+		Libs\DnDns\DnDns.pdb = Libs\DnDns\DnDns.pdb
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NXmpp.Dns", "NXmpp.Dns\NXmpp.Dns.csproj", "{2A8C3A2F-0F40-4F07-A569-804C6FF16260}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NXmpp.Dns.Windows", "NXmpp.Dns.Windows\NXmpp.Dns.Windows.csproj", "{67482E63-2025-42A8-9E0F-D7488E765918}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NXmpp.Dns.Windows.Tests", "NXmpp.Dns.Windows.Tests\NXmpp.Dns.Windows.Tests.csproj", "{EB737B85-1314-469D-8BD5-A56690A52FC5}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E537AE58-0E52-456B-8BE9-D5CF169C98B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E537AE58-0E52-456B-8BE9-D5CF169C98B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E537AE58-0E52-456B-8BE9-D5CF169C98B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E537AE58-0E52-456B-8BE9-D5CF169C98B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83B9CA6A-2BDD-4928-88BA-5CC511A6CC3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83B9CA6A-2BDD-4928-88BA-5CC511A6CC3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83B9CA6A-2BDD-4928-88BA-5CC511A6CC3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83B9CA6A-2BDD-4928-88BA-5CC511A6CC3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAD6F8A3-3CD5-40B0-8B8D-5F9B60009FEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAD6F8A3-3CD5-40B0-8B8D-5F9B60009FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAD6F8A3-3CD5-40B0-8B8D-5F9B60009FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAD6F8A3-3CD5-40B0-8B8D-5F9B60009FEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A8C3A2F-0F40-4F07-A569-804C6FF16260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A8C3A2F-0F40-4F07-A569-804C6FF16260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A8C3A2F-0F40-4F07-A569-804C6FF16260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A8C3A2F-0F40-4F07-A569-804C6FF16260}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67482E63-2025-42A8-9E0F-D7488E765918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67482E63-2025-42A8-9E0F-D7488E765918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67482E63-2025-42A8-9E0F-D7488E765918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67482E63-2025-42A8-9E0F-D7488E765918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB737B85-1314-469D-8BD5-A56690A52FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB737B85-1314-469D-8BD5-A56690A52FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB737B85-1314-469D-8BD5-A56690A52FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB737B85-1314-469D-8BD5-A56690A52FC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D6D77095-31FB-4F48-8ADF-C1F097EA5357} = {4450E095-1EB4-4984-9712-5E504F572C95}
+		{C2BA8DF3-97FF-4361-A254-FDD17C24654C} = {4450E095-1EB4-4984-9712-5E504F572C95}
+		{9899DE81-23F0-4BE3-A242-95D869FC47C5} = {4450E095-1EB4-4984-9712-5E504F572C95}
+		{3FAC7C96-9260-43DE-9685-56A495230858} = {4450E095-1EB4-4984-9712-5E504F572C95}
+	EndGlobalSection
+EndGlobal

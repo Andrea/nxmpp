@@ -1,0 +1,207 @@
+﻿<stream:stream to="winxmpp" xmlns="jabber:client" xmlns:stream="http://etherx.jabber.org/streams" version="1.0" >
+  <stream:stream xmlns:stream="http://etherx.jabber.org/streams" xmlns="jabber:client" from="winxmpp" id="60c61fd5" xml:lang="en" version="1.0">
+    <stream:features>
+      <mechanisms xmlns="urn:ietf:params:xml:ns:xmpp-sasl">
+        <mechanism>DIGEST-MD5</mechanism>
+        <mechanism>PLAIN</mechanism>
+        <mechanism>ANONYMOUS</mechanism>
+        <mechanism>CRAM-MD5</mechanism>
+      </mechanisms>
+      <auth xmlns="http://jabber.org/features/iq-auth"/>
+      <register xmlns="http://jabber.org/features/iq-register"/>
+    </stream:features>
+    <auth mechanism="DIGEST-MD5" xmlns="urn:ietf:params:xml:ns:xmpp-sasl"/>
+    <challenge xmlns="urn:ietf:params:xml:ns:xmpp-sasl">cmVhbG09IndpbnhtcHAiLG5vbmNlPSJoelVVekNNTnhDc1oyYUV0TEJIQys0UERDb2FaeEREN2FUcmttbnpvIixxb3A9ImF1dGgiLGNoYXJzZXQ9dXRmLTgsYWxnb3JpdGhtPW1kNS1zZXNz</challenge>
+    <response xmlns="urn:ietf:params:xml:ns:xmpp-sasl">dXNlcm5hbWU9InRlc3QiLHJlYWxtPSJ3aW54bXBwIixub25jZT0iaHpVVXpDTU54Q3NaMmFFdExCSEMrNFBEQ29hWnhERDdhVHJrbW56byIsY25vbmNlPSJjNTA2ZWZkYmFkOTlmYzkwODBhYmRjNmIyMGVjZGQ4NiIsbmM9MDAwMDAwMDEscW9wPWF1dGgsZGlnZXN0LXVyaT0ieG1wcC93aW54bXBwIixjaGFyc2V0PXV0Zi04LHJlc3BvbnNlPWYxYjgzZjcwMmJlOThjZmFjOGY2ZTQ1NTA3M2IxM2I3</response>
+    <success xmlns="urn:ietf:params:xml:ns:xmpp-sasl">cnNwYXV0aD1hZDM1NGFlNzU2YmJkNTMyYjMzMGNmMjMyOThlOTg5Mw==</success>
+    <stream:stream to="winxmpp" xmlns="jabber:client" xmlns:stream="http://etherx.jabber.org/streams" version="1.0" >
+      <stream:stream xmlns:stream="http://etherx.jabber.org/streams" xmlns="jabber:client" from="winxmpp" id="60c61fd5" xml:lang="en" version="1.0">
+        <stream:features>
+          <bind xmlns="urn:ietf:params:xml:ns:xmpp-bind"/>
+          <session xmlns="urn:ietf:params:xml:ns:xmpp-session"/>
+        </stream:features>
+        <iq id="jcl_12" type="set">
+          <bind xmlns="urn:ietf:params:xml:ns:xmpp-bind">
+            <resource>Exodus</resource>
+          </bind>
+        </iq>
+        <iq type="result" id="jcl_12" to="winxmpp/60c61fd5">
+          <bind xmlns="urn:ietf:params:xml:ns:xmpp-bind">
+            <jid>test@winxmpp/Exodus</jid>
+          </bind>
+        </iq>
+        <iq id="jcl_13" type="set">
+          <session xmlns="urn:ietf:params:xml:ns:xmpp-session"/>
+        </iq>
+        <iq type="result" id="jcl_13" to="test@winxmpp/Exodus">
+          <session xmlns="urn:ietf:params:xml:ns:xmpp-session"/>
+        </iq>
+        <iq id="jcl_14" type="get">
+          <query xmlns="jabber:iq:private">
+            <storage xmlns="storage:bookmarks"/>
+          </query>
+        </iq>
+        <iq type="result" id="jcl_14" to="test@winxmpp/Exodus">
+          <query xmlns="jabber:iq:private">
+            <storage xmlns="storage:bookmarks"/>
+          </query>
+        </iq>
+        <iq id="jcl_15" type="get">
+          <query xmlns="jabber:iq:roster"/>
+        </iq>
+        <iq type="result" id="jcl_15" to="test@winxmpp/Exodus">
+          <query xmlns="jabber:iq:roster"/>
+        </iq>
+        <iq id="jcl_16" to="winxmpp" type="get">
+          <query xmlns="http://jabber.org/protocol/disco#info"/>
+        </iq>
+        <iq type="result" id="jcl_16" from="winxmpp" to="test@winxmpp/Exodus">
+          <query xmlns="http://jabber.org/protocol/disco#info">
+            <identity category="server" name="Openfire Server" type="im"/>
+            <identity category="pubsub" type="pep"/>
+            <feature var="http://jabber.org/protocol/pubsub#manage-subscriptions"/>
+            <feature var="http://jabber.org/protocol/pubsub#modify-affiliations"/>
+            <feature var="http://jabber.org/protocol/pubsub#retrieve-default"/>
+            <feature var="http://jabber.org/protocol/pubsub#collections"/>
+            <feature var="jabber:iq:private"/>
+            <feature var="http://jabber.org/protocol/disco#items"/>
+            <feature var="vcard-temp"/>
+            <feature var="http://jabber.org/protocol/pubsub#publish"/>
+            <feature var="http://jabber.org/protocol/pubsub#subscribe"/>
+            <feature var="http://jabber.org/protocol/pubsub#retract-items"/>
+            <feature var="http://jabber.org/protocol/offline"/>
+            <feature var="http://jabber.org/protocol/pubsub#meta-data"/>
+            <feature var="jabber:iq:register"/>
+            <feature var="http://jabber.org/protocol/pubsub#retrieve-subscriptions"/>
+            <feature var="http://jabber.org/protocol/pubsub#default_access_model_open"/>
+            <feature var="jabber:iq:roster"/>
+            <feature var="http://jabber.org/protocol/pubsub#config-node"/>
+            <feature var="http://jabber.org/protocol/address"/>
+            <feature var="http://jabber.org/protocol/pubsub#publisher-affiliation"/>
+            <feature var="http://jabber.org/protocol/pubsub#item-ids"/>
+            <feature var="http://jabber.org/protocol/pubsub#instant-nodes"/>
+            <feature var="http://jabber.org/protocol/commands"/>
+            <feature var="http://jabber.org/protocol/pubsub#multi-subscribe"/>
+            <feature var="http://jabber.org/protocol/pubsub#outcast-affiliation"/>
+            <feature var="http://jabber.org/protocol/pubsub#get-pending"/>
+            <feature var="google:jingleinfo"/>
+            <feature var="jabber:iq:privacy"/>
+            <feature var="http://jabber.org/protocol/pubsub#subscription-options"/>
+            <feature var="jabber:iq:last"/>
+            <feature var="http://jabber.org/protocol/pubsub#create-and-configure"/>
+            <feature var="urn:xmpp:ping"/>
+            <feature var="http://jabber.org/protocol/pubsub#retrieve-items"/>
+            <feature var="jabber:iq:time"/>
+            <feature var="http://jabber.org/protocol/pubsub#create-nodes"/>
+            <feature var="http://jabber.org/protocol/pubsub#persistent-items"/>
+            <feature var="jabber:iq:version"/>
+            <feature var="http://jabber.org/protocol/pubsub#presence-notifications"/>
+            <feature var="http://jabber.org/protocol/pubsub"/>
+            <feature var="http://jabber.org/protocol/pubsub#retrieve-affiliations"/>
+            <feature var="http://jabber.org/protocol/pubsub#delete-nodes"/>
+            <feature var="http://jabber.org/protocol/pubsub#purge-nodes"/>
+            <feature var="http://jabber.org/protocol/disco#info"/>
+            <feature var="http://jabber.org/protocol/rsm"/>
+          </query>
+        </iq>
+        <iq id="jcl_17" type="get">
+          <query xmlns="jabber:iq:private">
+            <storage xmlns="storage:imprefs"/>
+          </query>
+        </iq>
+        <iq type="result" id="jcl_17" to="test@winxmpp/Exodus">
+          <query xmlns="jabber:iq:private">
+            <storage xmlns="storage:imprefs"/>
+          </query>
+        </iq>
+        <presence>
+          <c ext="xhtml-im" node="http://exodus.jabberstudio.org/caps" ver="0.10.0.0" xmlns="http://jabber.org/protocol/caps"/>
+          <priority>1</priority>
+        </presence>
+        <iq id="jcl_18" to="winxmpp" type="get">
+          <query xmlns="http://jabber.org/protocol/disco#items"/>
+        </iq>
+        <iq type="result" id="jcl_18" from="winxmpp" to="test@winxmpp/Exodus">
+          <query xmlns="http://jabber.org/protocol/disco#items">
+            <item jid="conference.winxmpp" name="Public Chatrooms"/>
+            <item jid="pubsub.winxmpp" name="Publish-Subscribe service"/>
+            <item jid="search.winxmpp" name="User Search"/>
+            <item jid="proxy.winxmpp" name="Socks 5 Bytestreams Proxy"/>
+          </query>
+        </iq>
+        <iq id="jcl_19" to="conference.winxmpp" type="get">
+          <query xmlns="http://jabber.org/protocol/disco#info"/>
+        </iq>
+        <iq id="jcl_20" to="pubsub.winxmpp" type="get">
+          <query xmlns="http://jabber.org/protocol/disco#info"/>
+        </iq>
+        <iq type="result" id="jcl_19" from="conference.winxmpp" to="test@winxmpp/Exodus">
+          <query xmlns="http://jabber.org/protocol/disco#info">
+            <identity category="conference" name="Public Chatrooms" type="text"/>
+            <identity category="directory" name="Public Chatroom Search" type="chatroom"/>
+            <feature var="http://jabber.org/protocol/muc"/>
+            <feature var="http://jabber.org/protocol/disco#info"/>
+            <feature var="http://jabber.org/protocol/disco#items"/>
+            <feature var="jabber:iq:search"/>
+            <feature var="http://jabber.org/protocol/rsm"/>
+          </query>
+        </iq>
+        <iq id="jcl_21" to="search.winxmpp" type="get">
+          <query xmlns="http://jabber.org/protocol/disco#info"/>
+        </iq>
+        <iq type="result" id="jcl_20" from="pubsub.winxmpp" to="test@winxmpp/Exodus">
+          <query xmlns="http://jabber.org/protocol/disco#info">
+            <identity category="pubsub" name="Publish-Subscribe service" type="service"/>
+            <feature var="http://jabber.org/protocol/pubsub"/>
+            <feature var="http://jabber.org/protocol/pubsub#collections"/>
+            <feature var="http://jabber.org/protocol/pubsub#config-node"/>
+            <feature var="http://jabber.org/protocol/pubsub#create-and-configure"/>
+            <feature var="http://jabber.org/protocol/pubsub#create-nodes"/>
+            <feature var="http://jabber.org/protocol/pubsub#delete-nodes"/>
+            <feature var="http://jabber.org/protocol/pubsub#get-pending"/>
+            <feature var="http://jabber.org/protocol/pubsub#instant-nodes"/>
+            <feature var="http://jabber.org/protocol/pubsub#item-ids"/>
+            <feature var="http://jabber.org/protocol/pubsub#meta-data"/>
+            <feature var="http://jabber.org/protocol/pubsub#modify-affiliations"/>
+            <feature var="http://jabber.org/protocol/pubsub#manage-subscriptions"/>
+            <feature var="http://jabber.org/protocol/pubsub#multi-subscribe"/>
+            <feature var="http://jabber.org/protocol/pubsub#outcast-affiliation"/>
+            <feature var="http://jabber.org/protocol/pubsub#persistent-items"/>
+            <feature var="http://jabber.org/protocol/pubsub#presence-notifications"/>
+            <feature var="http://jabber.org/protocol/pubsub#publish"/>
+            <feature var="http://jabber.org/protocol/pubsub#publisher-affiliation"/>
+            <feature var="http://jabber.org/protocol/pubsub#purge-nodes"/>
+            <feature var="http://jabber.org/protocol/pubsub#retract-items"/>
+            <feature var="http://jabber.org/protocol/pubsub#retrieve-affiliations"/>
+            <feature var="http://jabber.org/protocol/pubsub#retrieve-default"/>
+            <feature var="http://jabber.org/protocol/pubsub#retrieve-items"/>
+            <feature var="http://jabber.org/protocol/pubsub#retrieve-subscriptions"/>
+            <feature var="http://jabber.org/protocol/pubsub#subscribe"/>
+            <feature var="http://jabber.org/protocol/pubsub#subscription-options"/>
+            <feature var="http://jabber.org/protocol/pubsub#default_access_model_open"/>
+            <feature var="http://jabber.org/protocol/disco#info"/>
+          </query>
+        </iq>
+        <iq id="jcl_22" to="proxy.winxmpp" type="get">
+          <query xmlns="http://jabber.org/protocol/disco#info"/>
+        </iq>
+        <iq type="result" id="jcl_21" from="search.winxmpp" to="test@winxmpp/Exodus">
+          <query xmlns="http://jabber.org/protocol/disco#info">
+            <identity category="directory" type="user" name="User Search"/>
+            <feature var="jabber:iq:search"/>
+            <feature var="http://jabber.org/protocol/disco#info"/>
+            <feature var="http://jabber.org/protocol/rsm"/>
+          </query>
+        </iq>
+        <iq type="result" id="jcl_22" from="proxy.winxmpp" to="test@winxmpp/Exodus">
+          <query xmlns="http://jabber.org/protocol/disco#info">
+            <identity category="proxy" name="SOCKS5 Bytestreams Service" type="bytestreams"/>
+            <feature var="http://jabber.org/protocol/bytestreams"/>
+            <feature var="http://jabber.org/protocol/disco#info"/>
+          </query>
+        </iq>
+        <presence type="unavailable"/>
+      </stream:stream>
+    </stream:stream>
+  </stream:stream>
+</stream:stream>
