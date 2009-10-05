@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E537AE58-0E52-456B-8BE9-D5CF169C98B2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NXmpp</RootNamespace>
+    <AssemblyName>NXmpp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\NXmpp.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Common.Logging\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="DnDns, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\DnDns\DnDns.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AsyncSender.cs" />
+    <Compile Include="BlockingQueue.cs" />
+    <Compile Include="ConnectionState.cs" />
+    <Compile Include="ConnectionStates\BindResourceState.cs" />
+    <Compile Include="ConnectionStates\CompressState.cs" />
+    <Compile Include="ConnectionStates\ConnectedState.cs" />
+    <Compile Include="ConnectionStates\StartAsyncState.cs" />
+    <Compile Include="ConnectionStates\SaslAuthState.cs" />
+    <Compile Include="ConnectionStates\TlsState.cs" />
+    <Compile Include="ConnectionStates\TcpBindingState.cs" />
+    <Compile Include="ConnectionStates\ConnectionStateBase.cs" />
+    <Compile Include="ConnectionStates\ConnectionStatesEnumerable.cs" />
+    <Compile Include="EventArgs.cs" />
+    <Compile Include="Extensions\EnumHelper.cs" />
+    <Compile Include="Extensions\EventHandler.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="IXmppContext.cs" />
+    <Compile Include="IXmppService.cs" />
+    <Compile Include="MainLoop.cs" />
+    <Compile Include="NCommon\Guard.cs" />
+    <Compile Include="Net\AdapterInfo.cs" />
+    <Compile Include="Net\IXmppConnectionFactory.cs" />
+    <Compile Include="Net\XmppConnectionFactory.cs" />
+    <Compile Include="Net\XmppHost.cs" />
+    <Compile Include="Net\XmppHostsLookup.cs" />
+    <Compile Include="Net\IXmppConnection.cs" />
+    <Compile Include="Net\IXmppHostsLookup.cs" />
+    <Compile Include="PresenceState.cs" />
+    <Compile Include="Roster\IRoster.cs" />
+    <Compile Include="Roster\RosterChangedEventArgs.cs" />
+    <Compile Include="Protocol\NonDirectedStanza.cs" />
+    <Compile Include="Protocol\Sasl\SaslAuthResult.cs" />
+    <Compile Include="Protocol\Stanza.cs" />
+    <Compile Include="Protocol\Stream\ClientCloseStream.cs" />
+    <Compile Include="Roster\RosterItemChangedType.cs" />
+    <Compile Include="Roster\RosterItemSubscriptionType.cs" />
+    <Compile Include="Schemas\CustomXmlResolver.cs" />
+    <Compile Include="Protocol\Sasl\DigestMD5SaslAuth.cs" />
+    <Compile Include="Protocol\Sasl\SaslAuth.cs" />
+    <Compile Include="Protocol\Sasl\SaslChallenge.cs" />
+    <Compile Include="Protocol\DirectedStanza.cs" />
+    <Compile Include="JId.cs" />
+    <Compile Include="Protocol\Sasl\SaslResponse.cs" />
+    <Compile Include="Protocol\Stream\ServerInitialStream.cs" />
+    <Compile Include="Protocol\Error.cs" />
+    <Compile Include="Protocol\Tls\StartTlsRequest.cs" />
+    <Compile Include="Protocol\Tls\StartTlsResponse.cs" />
+    <Compile Include="Extensions\XmlReaderExtensions.cs" />
+    <Compile Include="IXmppClient.cs" />
+    <Compile Include="StanzaHandler\IStanzaHandler.cs" />
+    <Compile Include="StanzaHandler\StanzaHandlerBase.cs" />
+    <Compile Include="SubscriptionRequestEventArgs.cs" />
+    <Compile Include="UseTLS.cs" />
+    <Compile Include="Protocol\Stream\ClientInitialStream.cs" />
+    <Compile Include="Roster\RosterManager.cs" />
+    <Compile Include="Roster\RosterItem.cs" />
+    <Compile Include="Protocol\Stream\StreamExceptions.cs" />
+    <Compile Include="Protocol\NamespaceStrings.cs" />
+    <Compile Include="Sasl\DigestMD5Authentication.cs" />
+    <Compile Include="Sasl\DigestMD5Challenge.cs" />
+    <Compile Include="Protocol\Stream\ServerFeatures.cs" />
+    <Compile Include="Protocol\Message\MessageStanza.cs" />
+    <Compile Include="Protocol\Stanzas\PresenceStanza.cs" />
+    <Compile Include="Extensions\StreamExtensions.cs" />
+    <Compile Include="Extensions\XmlWriterExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmppClient.cs" />
+    <Compile Include="Net\XmppConnection.cs" />
+    <Compile Include="XmppClientSettings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\NXmpp.snk">
+      <Link>NXmpp.snk</Link>
+    </None>
+    <None Include="Protocol\Protocol.cd" />
+    <None Include="Schemas\dialback.xsd" />
+    <None Include="Schemas\jabber-client.xsd" />
+    <None Include="Schemas\jabber-server.xsd" />
+    <None Include="Schemas\sasl.xsd" />
+    <None Include="Schemas\stanzaerror.xsd" />
+    <None Include="Schemas\streamerror.xsd" />
+    <None Include="Schemas\streams.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NXmpp.Dns.Windows\NXmpp.Dns.Windows.csproj">
+      <Project>{67482E63-2025-42A8-9E0F-D7488E765918}</Project>
+      <Name>NXmpp.Dns.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NXmpp.Dns\NXmpp.Dns.csproj">
+      <Project>{2A8C3A2F-0F40-4F07-A569-804C6FF16260}</Project>
+      <Name>NXmpp.Dns</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Session\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,3 @@
+﻿<iq from="user@domain/resource" id="roster_0" type="get">
+  <query xmlns="jabber:iq:roster"/>
+</iq>

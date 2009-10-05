@@ -1,0 +1,6 @@
+﻿<iq to='juliet@example.com/balcony' type='error' id='roster_1'>
+  <error type='cancel'>
+    <service-unavailable xmlns='urn:ietf:params:xml:ns:xmpp-stanzas'/>
+    <text xmlns='urn:ietf:params:xml:ns:xmpp-stanzas' xml:lang='en-us'>error text</text>
+  </error>
+</iq>
