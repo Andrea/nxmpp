@@ -16,12 +16,22 @@
 
 #endregion
 
+using System;
 namespace NXmpp.Net
 {
-	internal class XmppSrvRecord
+	internal class XmppSrvRecord : IComparable<XmppSrvRecord>
 	{
 		internal string HostName { get; set; }
 		internal ushort Port { get; set; }
 		internal ushort Weight { get; set; }
+
+		#region IComparable<XmppSrvRecord> Members
+
+		public int CompareTo(XmppSrvRecord other)
+		{
+			return Weight.CompareTo(other.Weight);
+		}
+
+		#endregion
 	}
 }

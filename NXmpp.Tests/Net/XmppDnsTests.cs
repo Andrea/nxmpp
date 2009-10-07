@@ -55,7 +55,7 @@ namespace NXmpp.Tests.Net
 		}
 
 		[Fact]
-		public void When_no_dns_servers_respond_should_throw_SocketException_10060()
+		public void When_no_dns_servers_respond_should_return_domain_as_host()
 		{
 			var dnsServerLookupFactoryMock = new Mock<IDnsServerLookupFactory>();
 			dnsServerLookupFactoryMock.Setup(m => m.Create()).Returns(() => new Mock<IDnsServerLookup>().Object);
@@ -63,68 +63,23 @@ namespace NXmpp.Tests.Net
 			var dnsQueryRequestFactoryMock = new Mock<IDnsQueryRequestFactory>();
 			dnsQueryRequestFactoryMock.Setup(m => m.Create()).Returns(() => new Mock<IDnsQueryRequest>(MockBehavior.Loose).Object);
 
-			Assert.Throws<SocketException>("10060", () => XmppDns.GetHosts(dnsServerLookupFactoryMock.Object, dnsQueryRequestFactoryMock.Object, "domain", _logger));
+			const string domain = "domain.com";
+			XmppHost[] xmppHosts = XmppDns.GetHosts(dnsServerLookupFactoryMock.Object, dnsQueryRequestFactoryMock.Object, domain, _logger);
+
+			Assert.NotNull(xmppHosts);
+			Assert.Equal(1, xmppHosts.Length);
+			Assert.Equal(domain, xmppHosts[0].HostName);
 		}
 
 		[Fact]
-		public void When_all_dns_servers_unreachable_should_throw()
+		public void When_srv_query_returns_response_should_return_XmppHosts() //test requires internet connection.
 		{
-			var dnsServerLookupFactoryMock = new Mock<IDnsServerLookupFactory>();
-			dnsServerLookupFactoryMock.Setup(m => m.Create()).Returns(() =>
-			                                                          {
-			                                                          	var dnsServerLookupMock = new Mock<IDnsServerLookup>();
-			                                                          	dnsServerLookupMock.Setup(m => m.GetDnsServers()).Returns(new[] {IPAddress.Parse("127.0.0.1")});
-			                                                          	return dnsServerLookupMock.Object;
-			                                                          });
+			const string domain = "gmail.com";
 
-			var dnsQueryRequestFactoryMock = new Mock<IDnsQueryRequestFactory>();
-			dnsQueryRequestFactoryMock.Setup(m => m.Create()).Returns(() =>
-			                                                          {
-			                                                          	var dnsQueryRequestMock = new Mock<IDnsQueryRequest>();
-			                                                          	dnsQueryRequestMock.Setup(m => m.GetXmppSrvRecords(It.IsAny<string>(), It.IsAny<string>()))
-			                                                          		.Throws<SocketException>();
-			                                                          	return dnsQueryRequestMock.Object;
-			                                                          });
-
-			Assert.Throws<SocketException>(() => XmppDns.GetHosts(dnsServerLookupFactoryMock.Object, dnsQueryRequestFactoryMock.Object, "domain", _logger));
+			XmppHost[] xmppHosts = XmppDns.GetHosts(new WmiDnsServerLookupFactory(), new DnDnsQueryRequestFactory(), domain, _logger);
+			Assert.NotNull(xmppHosts);
+			Assert.True(xmppHosts.Length > 1);
+			Assert.Equal(domain, xmppHosts[xmppHosts.Length - 1].HostName);
 		}
-
-		//[Fact]
-		//public void When_srv_query_returns_response_should_return_XmppHosts()
-		//{
-		//    const string dnsServerAddress = "127.0.0.1";
-		//    const string domain = "domain.com";
-		//    var xmppHost = new XmppHost("xmpp.domain.com", 5129);
-
-		//    var dnsServerLookupFactoryMock = new Mock<IDnsServerLookupFactory>();
-		//    dnsServerLookupFactoryMock.Setup(m => m.Create()).Returns(() =>
-		//                                                              {
-		//                                                                var dnsServerLookupMock = new Mock<IDnsServerLookup>();
-		//                                                                dnsServerLookupMock.Setup(m => m.GetDnsServers()).Returns(new[] {IPAddress.Parse(dnsServerAddress)});
-		//                                                                return dnsServerLookupMock.Object;
-		//                                                              });
-
-		//    var dnsQueryRequestFactoryMock = new Mock<IDnsQueryRequestFactory>();
-		//    var xmppSrvRecord = new XmppSrvRecord {HostEntry = new IPHostEntry {AddressList = new[] {xmppHost.IPAddress}, HostName = xmppHost.HostName}, Port = xmppHost.Port};
-
-		//    var dnsQueryRequestMock = new Mock<IDnsQueryRequest>();
-		//    dnsQueryRequestMock.Setup(m => m.GetXmppSrvRecords(It.IsAny<string>(), "_xmpp-server._tcp." + domain)).Returns(() => new[] {xmppSrvRecord});
-
-		//    dnsQueryRequestFactoryMock.Setup(m => m.Create()).Returns(() => dnsQueryRequestMock.Object);
-		//    XmppHost[] xmppHosts = XmppDns.GetHosts(dnsServerLookupFactoryMock.Object, dnsQueryRequestFactoryMock.Object, domain, _logger);
-		//    Assert.NotNull(xmppHosts);
-		//    Assert.Equal(1, xmppHosts.Length);
-		//    Assert.Equal(xmppHost, xmppHosts[0]);
-		//}
-
-		//[Fact]
-		//public void When_query_for_gmail_with_should_return_XmppHosts() //test requires internet connection.
-		//{
-		//    //Todo: operation is too slow, investigate.
-		//    const string domain = "gmail.com";
-		//    XmppHost[] xmppHosts = XmppDns.GetHosts(new WmiDnsServerLookupFactory(), new DnDnsQueryRequestFactory(), domain, _logger);
-		//    Assert.NotNull(xmppHosts);
-		//    Assert.InRange(xmppHosts.Length, 1, int.MaxValue);
-		//}
 	}
 }

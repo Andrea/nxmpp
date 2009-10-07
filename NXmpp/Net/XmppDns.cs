@@ -18,7 +18,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using Common.Logging;
@@ -29,7 +28,7 @@ namespace NXmpp.Net
 	internal static class XmppDns
 	{
 		/// <summary>
-		/// Gets a array of XmppHosts for a given domain ordered by weight. First by looking up the srv records for the domain, then adding the domain as the host.
+		/// Gets a array of XmppHosts for a given domain ordered by weight. First by looking up the srv records for the domain, then adding the domain as the host for fall back.
 		/// Does not attempt to resolve IP addresses.
 		/// </summary>
 		/// <param name="dnsServerLookupFactory"></param>
@@ -42,7 +41,7 @@ namespace NXmpp.Net
 			IDnsServerLookup dnsServerLookup = dnsServerLookupFactory.Create();
 			IPAddress[] nameServers = dnsServerLookup.GetDnsServers();
 
-			var xmppHosts = new SortedList<int, XmppHost>();
+			var xmppSrvRecords = new List<XmppSrvRecord>();
 			string srvRecord = "_xmpp-server._tcp." + domain;
 
 			IDnsQueryRequest dnsQueryRequest = dnsQueryRequestFactory.Create();
@@ -50,25 +49,25 @@ namespace NXmpp.Net
 			//loop through each dns server and attempt to resolve for xmpp server hosts. Loop stops when a dns server is reachable and returns records
 			foreach (IPAddress nameServerAddress in nameServers)
 			{
-				XmppSrvRecord[] xmppSrvRecords;
 				try
 				{
-					xmppSrvRecords = dnsQueryRequest.GetXmppSrvRecords(nameServerAddress.ToString(), srvRecord);
+					xmppSrvRecords.AddRange(dnsQueryRequest.GetXmppSrvRecords(nameServerAddress.ToString(), srvRecord));
 				}
 				catch (SocketException ex)
 				{
 					log.Error("Dns server unreachable. " + ex);
 					continue;
 				}
-				if (xmppSrvRecords == null || xmppSrvRecords.Length <= 0) continue;
-				foreach (XmppSrvRecord xmppSrvRecord in xmppSrvRecords)
-				{
-					xmppHosts.Add(xmppSrvRecord.Weight, new XmppHost(xmppSrvRecord.HostName, xmppSrvRecord.Port));
-				}
-				break;
+				if (xmppSrvRecords.Count > 0) break;
 			}
-			xmppHosts.Add(99999999, new XmppHost(domain, 5222));
-			return xmppHosts.Values.ToArray();
+			xmppSrvRecords.Sort();
+			List<XmppHost> xmppHosts = xmppSrvRecords.ConvertAll(new Converter<XmppSrvRecord, XmppHost>(XmppSrvRecordToXmppHostConverter));
+			xmppHosts.Add(new XmppHost(domain, 5222)); //fallback host.
+			return xmppHosts.ToArray();
+		}
+		public static XmppHost XmppSrvRecordToXmppHostConverter(XmppSrvRecord xmppSrvRecord)
+		{
+			return new XmppHost(xmppSrvRecord.HostName, xmppSrvRecord.Port);
 		}
 	}
 }
