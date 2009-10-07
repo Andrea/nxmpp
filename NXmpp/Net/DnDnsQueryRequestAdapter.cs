@@ -37,7 +37,7 @@ namespace NXmpp.Net
 			foreach (IDnsRecord answer in response.Answers)
 			{
 				var srvRecord = (SrvRecord) answer;
-				xmppSrvRecords.Add(new XmppSrvRecord {HostEntry = System.Net.Dns.GetHostEntry(srvRecord.HostName), Port = srvRecord.Port});
+				xmppSrvRecords.Add(new XmppSrvRecord { HostName = srvRecord.HostName, Port = srvRecord.Port, Weight = srvRecord.Weight});
 			}
 			return xmppSrvRecords.ToArray();
 		}

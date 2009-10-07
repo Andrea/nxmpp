@@ -16,13 +16,12 @@
 
 #endregion
 
-using System.Net;
-
 namespace NXmpp.Net
 {
 	internal class XmppSrvRecord
 	{
-		internal IPHostEntry HostEntry { get; set; }
+		internal string HostName { get; set; }
 		internal ushort Port { get; set; }
+		internal ushort Weight { get; set; }
 	}
 }
