@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="Net\XmppDnsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NXmpp.Dns.Windows\NXmpp.Dns.Windows.csproj">
